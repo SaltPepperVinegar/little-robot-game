@@ -35,7 +35,6 @@ public class PlayerMovement : MonoBehaviour
             moveDir = Vector3.zero;
             isMoving = false;
         }
-        Debug.Log(controller.isGrounded);
 
         if (controller.isGrounded)
         {
