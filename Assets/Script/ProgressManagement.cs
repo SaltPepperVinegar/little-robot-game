@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
+
 public class ProgressManagement : MonoBehaviour
 {   
     [Header("The order of the notes")]
@@ -45,6 +47,8 @@ public class ProgressManagement : MonoBehaviour
         yield return new WaitForSeconds(3f);
         AnnoucementCanvas.SetActive(false);
         unlocked = true;
+        SceneManager.LoadScene(2);
+
     }
 
 }
