@@ -32,7 +32,7 @@ public class PlayerPickup : MonoBehaviour
     {
         if (!pickedUp){
             item = FindClosestWithTag("Item");
-            Debug.Log(item);
+            //Debug.Log(item);
         } else{
         }
 

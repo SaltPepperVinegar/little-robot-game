@@ -6,8 +6,8 @@ public class Base : MonoBehaviour
 {   
     public GameObject floatPoint;
     public bool attached=false;
-
-    public GameObject gameObject;
+    public Note BaseNote;
+    public GameObject linkedItem;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +16,7 @@ public class Base : MonoBehaviour
 
     public bool AttachItem(GameObject item){
         if (!attached){
-            gameObject = item; 
+            linkedItem = item; 
             item.transform.SetParent(floatPoint.transform);
             item.transform.position = floatPoint.transform.position;
             item.transform.localRotation = Quaternion.Euler(0, 0, 0);
@@ -30,7 +30,7 @@ public class Base : MonoBehaviour
     }
     public bool DetachItem(GameObject item){
         if (attached){
-            gameObject = null;
+            linkedItem = null;
             item.transform.SetParent(null);
             attached = false;
             Rigidbody rigidbody = item.GetComponent<Rigidbody>();
@@ -39,6 +39,15 @@ public class Base : MonoBehaviour
         }
         return true;
 
+    }
+
+    public bool isMatching(){
+        if(linkedItem !=null){
+            if(linkedItem.GetComponent<Item>().note == BaseNote)
+                return true;
+            return false;
+        }
+        return false;
     }
 
 }
