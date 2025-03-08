@@ -1,6 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+public enum Note
+    {
+        a,
+        asharp,
+        b,
+        c,
+        csharp,
+        d,
+        dsharp,
+        e,
+        f,
+        fsharp,
+        g,
+        gsharp,
+    }
+
 
 public class Item : MonoBehaviour
 {   
@@ -25,19 +41,4 @@ public class Item : MonoBehaviour
 
         }
     }
-    public enum Note
-    {
-        a,
-        asharp,
-        b,
-        c,
-        csharp,
-        d,
-        dsharp,
-        e,
-        f,
-        fsharp,
-        g,
-        gsharp,
-    }
-}
+}   
