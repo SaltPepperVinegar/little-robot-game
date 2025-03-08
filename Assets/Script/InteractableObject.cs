@@ -12,7 +12,7 @@ public class InteractableObject : MonoBehaviour
     private GameObject player;
     private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
+        player = GameObject.FindGameObjectWithTag("Camera");
     }
     
     void Update()
