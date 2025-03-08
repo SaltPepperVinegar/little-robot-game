@@ -5,8 +5,8 @@ using UnityEngine;
 public class RobotOscillation : MonoBehaviour
 {
 
-    public float amplitude = 1f; // Height of the wave
-    public float frequency = 1f; // Speed of the wave
+    public float amplitude = 0.8f; // Height of the wave
+    public float frequency = 8f; // Speed of the wave
     private PlayerMovement playerMovement; 
     private Vector3 startPosition;
     private Quaternion startRotation;
