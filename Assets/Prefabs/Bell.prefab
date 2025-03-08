@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 654883179953378745}
   - component: {fileID: 2660156976695773300}
   - component: {fileID: 2879954341787434093}
+  - component: {fileID: 6007587774717998916}
   m_Layer: 0
   m_Name: Bell
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -66,8 +67,8 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6509413668907459680}
   serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
+  m_Mass: 10
+  m_Drag: 2
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -85,6 +86,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &6007587774717998916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6509413668907459680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81d880e844fcb5143ba9d8f2f4ffa09e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  note: 0
+  inContact: 0
+  Base: {fileID: 0}
+  attached: 0
 --- !u!1 &7293596762085773927
 GameObject:
   m_ObjectHideFlags: 0
@@ -95,7 +112,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3592489514801652332}
   - component: {fileID: 2950078472111369006}
-  - component: {fileID: 1493691844481952296}
+  - component: {fileID: 1767316823528251693}
   m_Layer: 0
   m_Name: PickupCheck
   m_TagString: Untagged
@@ -141,7 +158,7 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1493691844481952296
+--- !u!114 &1767316823528251693
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -150,11 +167,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7293596762085773927}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81d880e844fcb5143ba9d8f2f4ffa09e, type: 3}
+  m_Script: {fileID: 11500000, guid: cd4985e77caf4f74885419ba69146ec2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  note: 0
-  inContact: 0
+  parent: {fileID: 6509413668907459680}
 --- !u!1 &7558633413771419127
 GameObject:
   m_ObjectHideFlags: 0
@@ -166,9 +182,10 @@ GameObject:
   - component: {fileID: 7432622531791956254}
   - component: {fileID: 1270482773834071904}
   - component: {fileID: 8815161483299870264}
+  - component: {fileID: 2756893443741540099}
   m_Layer: 0
   m_Name: Bell
-  m_TagString: Item
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -238,3 +255,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &2756893443741540099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7558633413771419127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6aa8af70e2fbfb14f9dd4850d201b380, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amplitude: 1
+  frequency: 3
+  item: {fileID: 6509413668907459680}
+  rotationSpeed: 5
