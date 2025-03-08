@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
     public float smoothTurn = 0.1f;
     public float gravity = 20f; // the force of gravity after a player jumps
     private float vspeed = 0; // vertical speed
-    public float jumpHeight = 100f;
+    public float jumpHeight = 10f;
     Vector3 moveDir;
     private bool isMoving=false;
     void Start()
