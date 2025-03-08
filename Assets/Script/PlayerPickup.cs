@@ -38,8 +38,12 @@ public class PlayerPickup : MonoBehaviour
 
 
         if (Input.GetButtonDown("Use Item")){
+            Item itemscript = item.GetComponent<Item>();
             if (!pickedUp){
-                if (item.GetComponentInChildren<Instrument>().inContact){
+                if (itemscript.inContact){
+                    if( itemscript.attached){
+                        itemscript.DetachBase();
+                    }
                     item.transform.SetParent(holdPoint.transform);
                     item.transform.position = holdPoint.transform.position;
 
@@ -53,7 +57,7 @@ public class PlayerPickup : MonoBehaviour
                 Rigidbody rigidbody = item.GetComponent<Rigidbody>();
                 rigidbody.isKinematic = false;
                 item.transform.SetParent(null);
-
+                itemscript.AttachBase();
                 Debug.Log("Drop Down");
             }
         }
