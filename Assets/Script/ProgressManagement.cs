@@ -9,11 +9,15 @@ public class ProgressManagement : MonoBehaviour
     [Header("The order of the notes")]
     [SerializeField] private GameObject AnnoucementCanvas;
 
+    public AudioSource Melody;
+    public float[] delayAfterEachNotes;
+
     public Note[] notes;
 
 
     public Base[] bases;
     private bool unlocked = false;
+    bool matching = false;
 
     void Start()
     {
@@ -23,22 +27,41 @@ public class ProgressManagement : MonoBehaviour
     }
     void Update()
     {
-        CheckForMelody();
     }
 
-    void CheckForMelody(){
+    public void CheckForMelody(){
+        matching = true;
         if (!unlocked){
             foreach(Base basenote in bases)
             {
                 if(! basenote.GetComponent<Base>().isMatching()){
-                    return;
-
+                    matching = false;
                 }
-
             } 
-            StartCoroutine(Annoucement());
+            if(matching){
+                StartCoroutine(Annoucement());
+
+            }
+            //StartCoroutine(StartChecking());
         }
         
+    }
+    private IEnumerator StartChecking()
+    {   
+        Melody.Play();
+        yield return new WaitForSeconds(3f);
+        Melody.Stop();
+
+        for(int i=0; i<bases.Length; i++)
+        {
+            bases[i].GetComponent<Base>().linkedItem.GetComponent<Item>().notesAudio.Play();
+            yield return new WaitForSeconds(delayAfterEachNotes[i]);
+        } 
+        if(matching){
+            StartCoroutine(Annoucement());
+
+        }
+
     }
 
     private IEnumerator Annoucement()
