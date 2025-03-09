@@ -7,7 +7,7 @@ public class PlayerPickup : MonoBehaviour
     private GameObject item = null;
     float distance = float.PositiveInfinity;
     public bool pickedUp = false;
-
+    public GameObject playerObject;
     public GameObject holdPoint;
 
     /*
@@ -38,32 +38,43 @@ public class PlayerPickup : MonoBehaviour
 
 
         if (Input.GetButtonDown("Use Item")){
-            Item itemscript = item.GetComponent<Item>();
-            if (!pickedUp){
-                if (itemscript.inContact){
-                    if( itemscript.attached){
-                        itemscript.DetachBase();
-                    }
-                    item.transform.SetParent(holdPoint.transform);
-                    item.transform.position = holdPoint.transform.position;
-
-                    pickedUp = true;
-                    Rigidbody rigidbody = item.GetComponent<Rigidbody>();
-                    rigidbody.isKinematic = true;
-                    Debug.Log("pick up ");
-                }
-            } else{
-                pickedUp = false;
-                Rigidbody rigidbody = item.GetComponent<Rigidbody>();
-                rigidbody.isKinematic = false;
-                item.transform.SetParent(null);
-                itemscript.AttachBase();
-                Debug.Log("Drop Down");
+            pickup();
+        }
+        if (Input.GetButtonDown("Shake")){
+            if (pickedUp ){
+                ItemOscillation itemscript = item.GetComponentInChildren<ItemOscillation>();
+                itemscript.shakeBell();
             }
         }
     }
 
+    private void pickup(){
+        Item itemscript = item.GetComponent<Item>();
+        if (!pickedUp){
+            if (itemscript.inContact){
+                if( itemscript.attached){
+                    itemscript.DetachBase();
+                }
+                item.transform.SetParent(playerObject.transform);
 
+                item.transform.localRotation = holdPoint.transform.localRotation;
+                item.transform.position = holdPoint.transform.position;
+
+                pickedUp = true;
+                Rigidbody rigidbody = item.GetComponent<Rigidbody>();
+                rigidbody.isKinematic = true;
+                Debug.Log("pick up ");
+            }
+        } else{
+            pickedUp = false;
+            Rigidbody rigidbody = item.GetComponent<Rigidbody>();
+            rigidbody.isKinematic = false;
+            item.transform.SetParent(null);
+            itemscript.AttachBase();
+            Debug.Log("Drop Down");
+        }
+
+    }
 
     GameObject FindClosestWithTag(string tag)
     {

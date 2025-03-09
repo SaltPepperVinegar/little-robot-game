@@ -12,7 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 758e9d9a7f5f1414ebba0e189d1159d4, type: 3}
   m_Name: Melody1
   m_EditorClassIdentifier: 
-  correctSequence:
-  - F
-  - G
-  - C
+  correctSequence: 080000000a00000003000000

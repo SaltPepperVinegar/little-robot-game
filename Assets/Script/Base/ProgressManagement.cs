@@ -8,19 +8,24 @@ public class ProgressManagement : MonoBehaviour
 {   
     [Header("The order of the notes")]
     [SerializeField] private GameObject AnnoucementCanvas;
+    private Camera mainCamera;
 
+    public Camera thirdPersonCamera;
     public AudioSource Melody;
-    public float[] delayAfterEachNotes;
+    public float BPM = 120f;
 
     public Note[] notes;
 
+    public float[] quartersAfterEachNote;
 
     public Base[] bases;
     private bool unlocked = false;
     bool matching = false;
-
+    private bool checking = false;
+    public GameObject door;
     void Start()
-    {
+    {   
+        mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         for(int i=0; i<notes.Length; i++){
             bases[i].GetComponent<Base>().BaseNote = notes[i];
         }
@@ -31,42 +36,47 @@ public class ProgressManagement : MonoBehaviour
 
     public void CheckForMelody(){
         matching = true;
-        if (!unlocked){
+
+        if (!unlocked && !checking){
             foreach(Base basenote in bases)
             {
                 if(! basenote.GetComponent<Base>().isMatching()){
                     matching = false;
                 }
             } 
-            if(matching){
-                StartCoroutine(Annoucement());
 
-            }
-            //StartCoroutine(StartChecking());
+            StartCoroutine(StartChecking());
         }
         
     }
     private IEnumerator StartChecking()
     {   
-        Melody.Play();
-        yield return new WaitForSeconds(3f);
-        Melody.Stop();
+        mainCamera.enabled = false;
+        thirdPersonCamera.enabled = true;
+        checking = true;
+        yield return new WaitForSeconds(0.5f);
 
         for(int i=0; i<bases.Length; i++)
         {
-            bases[i].GetComponent<Base>().linkedItem.GetComponent<Item>().notesAudio.Play();
-            yield return new WaitForSeconds(delayAfterEachNotes[i]);
+            bases[i].GetComponent<Base>().PlayMatch();
+            yield return new WaitForSeconds(quartersAfterEachNote[i]*60/BPM);
         } 
         if(matching){
             StartCoroutine(Annoucement());
 
         }
+        yield return new WaitForSeconds(0.5f);
+
+        mainCamera.enabled = true;
+        thirdPersonCamera.enabled = false;
+        checking = false;
 
     }
 
     private IEnumerator Annoucement()
     {   
         AnnoucementCanvas.SetActive(true);
+        door.GetComponent<DoorOpen>().openDoor();
         yield return new WaitForSeconds(3f);
         AnnoucementCanvas.SetActive(false);
         unlocked = true;
