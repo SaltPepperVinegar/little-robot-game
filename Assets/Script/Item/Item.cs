@@ -25,7 +25,8 @@ public class Item : MonoBehaviour
 
     public GameObject Base = null;
     public bool attached = false;
-
+ 
+    public AudioSource notesAudio;
 
     public void AttachBase(){
         if(Base != null){
