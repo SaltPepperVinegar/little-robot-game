@@ -9,7 +9,7 @@ public class InteractableObject : MonoBehaviour
 {
     public TextMeshProUGUI text;
     private bool inRange;
-    private GameObject player;
+    private GameObject player;  
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
