@@ -20,7 +20,7 @@ public enum Note
 
 public class Item : MonoBehaviour
 {   
-    public Note note = new Note();
+    public Note note;
     public bool inContact = false;
 
     public GameObject Base = null;
@@ -35,7 +35,10 @@ public class Item : MonoBehaviour
 
         }
     }
-
+    public void PlaySound(){
+        notesAudio.Stop();
+        notesAudio.Play();
+    }
     public void DetachBase(){
         if(Base != null){
             attached = Base.GetComponentInParent<Base>().DetachItem(gameObject);

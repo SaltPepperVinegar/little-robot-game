@@ -7,11 +7,12 @@ public class Base : MonoBehaviour
     public GameObject floatPoint;
     public bool attached=false;
     public Note BaseNote;
+    private AudioSource baseAudio;
     public GameObject linkedItem;
     // Start is called before the first frame update
     void Start()
     {
-        
+        baseAudio = GetComponent<AudioSource>();
     }
 
     public bool AttachItem(GameObject item){
@@ -23,11 +24,28 @@ public class Base : MonoBehaviour
             attached = true;
             Rigidbody rigidbody = item.GetComponent<Rigidbody>();
             rigidbody.isKinematic = true;
+            PlaySound();
+            item.GetComponent<Item>().PlaySound();
             return true;
         }
         return false;
 
     }
+
+    public void PlaySound(){
+        baseAudio.Stop();
+        baseAudio.Play();
+    }
+    public void PlayMatch(){
+        baseAudio.Stop();
+        baseAudio.Play();
+        if(attached){
+            linkedItem.GetComponent<Item>().PlaySound();
+
+        }
+    }
+
+
     public bool DetachItem(GameObject item){
         if (attached){
             linkedItem = null;
@@ -35,6 +53,7 @@ public class Base : MonoBehaviour
             attached = false;
             Rigidbody rigidbody = item.GetComponent<Rigidbody>();
             rigidbody.isKinematic = false;
+
             return false;
         }
         return true;

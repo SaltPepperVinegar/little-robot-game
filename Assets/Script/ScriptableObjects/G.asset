@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: G
   m_EditorClassIdentifier: 
   audioClip: {fileID: 8300000, guid: 58a46f60376a3ec47bc987c8e6ace2a1, type: 3}
-  note: G
+  note: 10

@@ -9,7 +9,11 @@ public class ItemOscillation : MonoBehaviour
     public GameObject item;
     private Vector3 startPosition;
     private Quaternion startRotation;
-    public float rotationSpeed = 5f;
+    public float rotationSpeed = 20f;
+
+    public float rotationRange = 20f;
+
+    public bool isShaking = false;
     void Start()
     {   
         // Store the initial position of the object
@@ -19,7 +23,7 @@ public class ItemOscillation : MonoBehaviour
     void FixedUpdate()
     {   
 
-        if (item.GetComponent<Item>().attached){
+        if (item.GetComponent<Item>().attached && ! isShaking){
                 // Calculate the new Y position based on sine wave
                 float newY = Mathf.Sin(Time.time * frequency) * amplitude*Time.deltaTime;
 
@@ -30,5 +34,40 @@ public class ItemOscillation : MonoBehaviour
                 transform.localPosition = startPosition;
 
         } 
+    }
+
+    public void shakeBell(){
+        if (!isShaking){
+            for (int i=0; i<3 ;i++){
+                Debug.Log("start shaking");
+                StartCoroutine(StartShaking());
+            }
+
+        }
+    }
+
+    IEnumerator StartShaking()
+    {
+        isShaking = true;
+        
+        float duration = 0.75f; // Adjust duration as needed
+        float elapsedTime = 0f;
+        item.GetComponent<Item>().PlaySound();
+
+        while (elapsedTime < duration)
+        {
+            float angle = Mathf.Sin(Time.time * rotationSpeed) * 20f;
+            transform.localRotation = Quaternion.Euler(0, 0, angle);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        // Reset rotation
+        transform.localRotation = Quaternion.identity;
+
+        yield return new WaitForSeconds(1f);
+
+
+        isShaking = false;
     }
 }

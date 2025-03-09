@@ -10,14 +10,14 @@ public class RobotOscillation : MonoBehaviour
     private PlayerMovement playerMovement; 
     private Vector3 startPosition;
     private Quaternion startRotation;
-
+    public GameObject playerBody;
     public float rotationSpeed = 5f;
     void Start()
     {   
         playerMovement = GetComponentInParent<PlayerMovement>();
         // Store the initial position of the object
         startPosition = transform.localPosition;
-        startRotation = transform.localRotation;
+        startRotation = playerBody.transform.localRotation;
     }
 
     void FixedUpdate()
@@ -25,13 +25,13 @@ public class RobotOscillation : MonoBehaviour
         if (!playerMovement.IsMoving() )
         {   
             Quaternion targetRotation = Quaternion.Euler(0, 0, 0);
-            transform.localRotation = Quaternion.Slerp(transform.localRotation, targetRotation, Time.deltaTime * rotationSpeed);
+            playerBody.transform.localRotation = Quaternion.Slerp(playerBody.transform.localRotation, targetRotation, Time.deltaTime * rotationSpeed);
 
 
         } else{
-            transform.localPosition = startPosition;
+            playerBody.transform.localPosition = startPosition;
             Quaternion targetRotation = Quaternion.Euler(20f, 0, 0);
-            transform.localRotation = Quaternion.Slerp(transform.localRotation, targetRotation, Time.deltaTime * rotationSpeed);
+            playerBody.transform.localRotation = Quaternion.Slerp(playerBody.transform.localRotation, targetRotation, Time.deltaTime * rotationSpeed);
 
         }
         if (playerMovement.IsGrounded()){

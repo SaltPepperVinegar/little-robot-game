@@ -6,5 +6,5 @@ using UnityEngine;
 public class NoteData : ScriptableObject
 {
     public AudioClip audioClip;
-    public string note;
+    public Note note;
 }

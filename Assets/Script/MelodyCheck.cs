@@ -6,12 +6,12 @@ using UnityEngine;
 
 public class MelodyCheck : MonoBehaviour
 {
-    private List<string> notesPlayed = new List<string>();
+    private List<Note> notesPlayed = new List<Note>();
     public MelodyData melodyData;
     public SlidingDoor door1;
     public SlidingDoor door2;
     private bool DoorOpen;
-    public void SaveNoteToList(string note)
+    public void SaveNoteToList(Note note)
     {
         notesPlayed.Add(note);
 
