@@ -8,8 +8,6 @@ public class MelodyCheck : MonoBehaviour
 {
     private List<Note> notesPlayed = new List<Note>();
     public MelodyData melodyData;
-    public SlidingDoor door1;
-    public SlidingDoor door2;
     private bool DoorOpen;
     public void SaveNoteToList(Note note)
     {
@@ -19,11 +17,6 @@ public class MelodyCheck : MonoBehaviour
         {
             if (notesPlayed.SequenceEqual(melodyData.correctSequence))
             {
-                if (door1 != null && door2 != null)
-                {
-                    door1.SetAnimation(!DoorOpen);
-                    door2.SetAnimation(!DoorOpen);
-                }
                 
             }
 
