@@ -12,9 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52aaf555d720d4642ae969b003826059, type: 3}
   m_Name: New MelodySet
   m_EditorClassIdentifier: 
-  Melody: 000000000000000000000000
-  quartersAfterEachNote:
-  - 0
-  - 0
-  - 0
+  Melody: 03000000080000000000000005000000
+  quartersAfterEachNote: []
   BPM: 120

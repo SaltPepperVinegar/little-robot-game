@@ -12,12 +12,13 @@ public class ProgressManagement : MonoBehaviour
 
     public Camera thirdPersonCamera;
     public AudioSource Melody;
-    public float BPM = 120f;
+    private float BPM = 120f;
+    
+    private Note[] notes;
 
-    public Note[] notes;
-
-    public float[] quartersAfterEachNote;
-
+    private float[] quartersAfterEachNote;
+    private MelodySet melodyChoosed;
+    public MelodySet[] melodyToChooseFrom;
     public Base[] bases;
     private bool unlocked = false;
     bool matching = false;
@@ -25,7 +26,14 @@ public class ProgressManagement : MonoBehaviour
     public GameObject door;
     void Start()
     {   
+        
         mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+        int j = Random.Range(0,melodyToChooseFrom.Length);
+        Debug.Log(j + "choosed");
+        melodyChoosed = melodyToChooseFrom[j];
+        quartersAfterEachNote = melodyChoosed.quartersAfterEachNote;
+        notes = melodyChoosed.Melody;
+        BPM = melodyChoosed.BPM;
         for(int i=0; i<notes.Length; i++){
             bases[i].GetComponent<Base>().BaseNote = notes[i];
         }
