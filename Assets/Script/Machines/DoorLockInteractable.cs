@@ -9,7 +9,7 @@ public class DoorLockInteractable : BaseInteractable
     protected override void Start()
     {
         base.Start();
-        melody = GetComponent<AudioSource>();
+        melody = GetComponent<AudioSource>();   
     }
     protected override void Interact()
     {

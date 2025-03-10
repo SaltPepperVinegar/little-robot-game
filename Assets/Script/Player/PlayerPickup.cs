@@ -49,6 +49,10 @@ public class PlayerPickup : MonoBehaviour
     }
 
     private void pickup(){
+        if (item == null)
+        {
+            return;
+        }
         Item itemscript = item.GetComponent<Item>();
         if (!pickedUp){
             if (itemscript.inContact){
