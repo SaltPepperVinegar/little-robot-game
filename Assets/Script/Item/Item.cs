@@ -25,9 +25,10 @@ public class Item : MonoBehaviour
 
     public GameObject Base = null;
     public bool attached = false;
- 
+    public bool playing;
     public AudioSource notesAudio;
 
+    public bool hasBeenPickedup;
     public void AttachBase(){
         if(Base != null){
             attached = Base.GetComponentInParent<Base>().AttachItem(gameObject);
@@ -36,13 +37,26 @@ public class Item : MonoBehaviour
         }
     }
     public void PlaySound(){
-        notesAudio.Stop();
-        notesAudio.Play();
+            notesAudio.Stop();
+            notesAudio.Play();
     }
     public void DetachBase(){
         if(Base != null){
             attached = Base.GetComponentInParent<Base>().DetachItem(gameObject);
 
         }
+    }
+
+    public void PlaySoundWhenNearBy(){
+        if (!playing){
+            StartCoroutine(PlaySoundWithCoolDown());
+
+        }
+    }
+    IEnumerator PlaySoundWithCoolDown(){
+        playing = true;
+        PlaySound();
+        yield return new WaitForSeconds(3f);
+        playing = false;
     }
 }   

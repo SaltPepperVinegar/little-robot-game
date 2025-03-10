@@ -8,6 +8,7 @@ using UnityEngine;
 public class CheckNotes : MonoBehaviour
 {
     public TextMeshProUGUI text;
+    public Canvas canvas;
     private bool inRange;
     private GameObject player;
     public GameObject BaseManagement;
@@ -25,13 +26,20 @@ public class CheckNotes : MonoBehaviour
         if (player != null)
         {
             Vector3 playerPos = player.transform.position + new Vector3(0, 3, 0);
-            text.transform.LookAt(playerPos);
-            text.transform.Rotate(0, 180, 0);
+            canvas.transform.LookAt(playerPos);
+            canvas.transform.Rotate(0, 180, 0);
         }
         
-        if (inRange && Input.GetKeyDown(KeyCode.E))
+        if (inRange )
         {
-            management.CheckForMelody();
+            canvas.enabled=true;
+            if (Input.GetKeyDown(KeyCode.E)){
+             management.CheckForMelody();
+
+            }
+        } else{
+            canvas.enabled=false;
+
         }
     }
 
@@ -41,7 +49,7 @@ public class CheckNotes : MonoBehaviour
         
         if (other.tag == "Player")
         {
-            text.text = "Press E to Ring the Bell!";
+            text.text = "Press [E]… Let’s see what happens.";
             
             inRange = true;
         }
