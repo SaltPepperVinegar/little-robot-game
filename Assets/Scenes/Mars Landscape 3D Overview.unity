@@ -1376,6 +1376,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 528772584}
+  canvas: {fileID: 721970212}
 --- !u!82 &634506148
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1683,6 +1684,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 713686982}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!223 &721970212 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 6239013024029620745, guid: c8e67eb92587afc41b0dedc1f30d420d, type: 3}
+  m_PrefabInstance: {fileID: 620249424}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &725591794
 PrefabInstance:
   m_ObjectHideFlags: 0

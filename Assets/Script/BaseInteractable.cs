@@ -6,6 +6,7 @@ public abstract class BaseInteractable : MonoBehaviour
     public TextMeshProUGUI text;
     private bool inRange;
     protected GameObject player;
+    public Canvas canvas;
 
     protected virtual void Start()
     {
@@ -17,14 +18,21 @@ public abstract class BaseInteractable : MonoBehaviour
         if (player != null)
         {
             Vector3 playerPos = player.transform.position + new Vector3(0, 3, 0);
-            text.transform.LookAt(playerPos);
-            text.transform.Rotate(0, 180, 0);
+            canvas.transform.LookAt(playerPos);
+            canvas.transform.Rotate(0, 180, 0);
+        }
+      if (inRange )
+        {
+            canvas.enabled=true;
+            if (Input.GetKeyDown(KeyCode.E)){
+                Interact();
+
+            }
+        } else{
+            canvas.enabled=false;
+
         }
 
-        if (inRange && Input.GetKeyDown(KeyCode.E))
-        {
-            Interact();
-        }
     }
 
     protected virtual void OnTriggerEnter(Collider other)
