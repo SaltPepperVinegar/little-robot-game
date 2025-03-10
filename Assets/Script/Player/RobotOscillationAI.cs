@@ -1,0 +1,46 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class RobotOscillationAI : MonoBehaviour
+{
+
+    public float amplitude = 0.8f; // Height of the wave
+    public float frequency = 8f; // Speed of the wave
+    private AiPlayerMovement playerMovement; 
+    private Vector3 startPosition;
+    private Quaternion startRotation;
+    public GameObject playerBody;
+    public float rotationSpeed = 5f;
+    void Start()
+    {   
+        playerMovement = GetComponentInParent<AiPlayerMovement>();
+        // Store the initial position of the object
+        startPosition = transform.localPosition;
+        startRotation = playerBody.transform.localRotation;
+    }
+
+    void FixedUpdate()
+    {       
+        if (!playerMovement.IsMoving() )
+        {   
+            Quaternion targetRotation = Quaternion.Euler(0, 0, 0);
+            playerBody.transform.localRotation = Quaternion.Slerp(playerBody.transform.localRotation, targetRotation, Time.deltaTime * rotationSpeed);
+
+
+        } else{
+            playerBody.transform.localPosition = startPosition;
+            Quaternion targetRotation = Quaternion.Euler(20f, 0, 0);
+            playerBody.transform.localRotation = Quaternion.Slerp(playerBody.transform.localRotation, targetRotation, Time.deltaTime * rotationSpeed);
+
+        }
+            // Calculate the new Y position based on sine wave
+            float newY = Mathf.Sin(Time.time * frequency) * amplitude*Time.deltaTime;
+
+            // Update the object's position
+            transform.localPosition += new Vector3(0, newY, 0);
+
+
+    }
+}
+
