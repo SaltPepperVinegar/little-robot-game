@@ -39,7 +39,7 @@ public abstract class BaseInteractable : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            text.text = "Press E to Interact!";
+            text.text = "System ready. Press [E] to engage";
             inRange = true;
         }
     }
