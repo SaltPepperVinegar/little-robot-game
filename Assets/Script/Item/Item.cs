@@ -28,7 +28,7 @@ public class Item : MonoBehaviour
     public bool playing;
     public AudioSource notesAudio;
 
-    public bool hasBeenPickedup;
+    public bool hasBeenPickedup = false ;
     public void AttachBase(){
         if(Base != null){
             attached = Base.GetComponentInParent<Base>().AttachItem(gameObject);
@@ -48,7 +48,7 @@ public class Item : MonoBehaviour
     }
 
     public void PlaySoundWhenNearBy(){
-        if (!playing){
+        if (!playing && !hasBeenPickedup){
             StartCoroutine(PlaySoundWithCoolDown());
 
         }
@@ -56,6 +56,7 @@ public class Item : MonoBehaviour
     IEnumerator PlaySoundWithCoolDown(){
         playing = true;
         PlaySound();
+        hasBeenPickedup = true;
         yield return new WaitForSeconds(3f);
         playing = false;
     }

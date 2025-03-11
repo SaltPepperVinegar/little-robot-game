@@ -6,4 +6,5 @@ using UnityEngine;
 public class MelodyData : ScriptableObject
 {
     public List<Note> correctSequence;
+    public AudioClip audioClip;
 }
