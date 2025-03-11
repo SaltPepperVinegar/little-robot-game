@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3786269b-e5b1-4744-adb5-565028d21936" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Images/red diamond.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Images/red diamond.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/BaseManagement.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/BaseManagement.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/3D starterscreen 1.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/3D starterscreen 1.unity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/3D starterscreen.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/3D starterscreen.unity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Script/OpenTheDoor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Script/OpenTheDoor.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Script/Player/AiPlayerMovement.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Script/Player/AiPlayerMovement.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Script/Player/RobotOscillationAI.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Script/Player/RobotOscillationAI.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DoorController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DoorController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Base.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Base.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Mars Landscape 3D Overview.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Mars Landscape 3D Overview.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene 2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene 2.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/CheckNotes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/CheckNotes.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/Item/Item.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Item/Item.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/Machines/DoorLockInteractable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Machines/DoorLockInteractable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 0
+}]]></component>
+  <component name="ProjectId" id="2u9O8EsCLwgukF7RlRgxS5QFPpl" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "Merging main",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-PY-241.15989.155" />
+        <option value="bundled-python-sdk-babbdf50b680-7c6932dee5e4-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-241.15989.155" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3786269b-e5b1-4744-adb5-565028d21936" name="Changes" comment="" />
+      <created>1741657164135</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1741657164135</updated>
+      <workItem from="1741657165649" duration="41000" />
+    </task>
+    <servers />
+  </component>
+</project>
