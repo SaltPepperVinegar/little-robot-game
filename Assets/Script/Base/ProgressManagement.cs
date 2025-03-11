@@ -19,6 +19,7 @@ public class ProgressManagement : MonoBehaviour
     private MelodySet melodyChoosed;
     public MelodySet[] melodyToChooseFrom;
     public Base[] bases;
+    public Item[] bells;
     private bool unlocked = false;
     bool matching = false;
     private bool checking = false;
@@ -34,8 +35,10 @@ public class ProgressManagement : MonoBehaviour
         notes = melodyChoosed.Melody;
         BPM = melodyChoosed.BPM;
         for(int i=0; i<notes.Length; i++){
-            bases[i].GetComponent<Base>().BaseNote = notes[i];
-            bases[i].GetComponent<Base>().ChangeVoice(melodyChoosed.basesounds[i]);
+            bases[i].BaseNote = notes[i];
+            bases[i].ChangeVoice(melodyChoosed.basesounds[i]);
+            bells[i].note = notes[i];
+            bells[i].ChangeVoice(melodyChoosed.bellsounds[i]);
         }
     }
     void Update()

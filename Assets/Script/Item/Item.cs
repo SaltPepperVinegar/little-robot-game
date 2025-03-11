@@ -46,7 +46,9 @@ public class Item : MonoBehaviour
 
         }
     }
-
+    public void ChangeVoice(AudioClip audioClip){
+        notesAudio.clip = audioClip;
+    }
     public void PlaySoundWhenNearBy(){
         if (!playing && !hasBeenPickedup){
             StartCoroutine(PlaySoundWithCoolDown());
@@ -56,7 +58,6 @@ public class Item : MonoBehaviour
     IEnumerator PlaySoundWithCoolDown(){
         playing = true;
         PlaySound();
-        hasBeenPickedup = true;
         yield return new WaitForSeconds(3f);
         playing = false;
     }

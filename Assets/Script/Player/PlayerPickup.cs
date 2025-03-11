@@ -60,7 +60,7 @@ public class PlayerPickup : MonoBehaviour
                     itemscript.DetachBase();
                 }
                 item.transform.SetParent(playerObject.transform);
-
+                itemscript.hasBeenPickedup = true;
                 item.transform.localRotation = holdPoint.transform.localRotation;
                 item.transform.position = holdPoint.transform.position;
 
