@@ -10006,6 +10006,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1988680128}
   - component: {fileID: 1988680127}
+  - component: {fileID: 1988680129}
   m_Layer: 0
   m_Name: Audio
   m_TagString: Untagged
@@ -10020,7 +10021,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1988680126}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: df81ff13b4e27490a97d74c1f325fe4e, type: 3}
@@ -10124,6 +10125,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1988680129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1988680126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d9b894039b239243a3ea593edc39e78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loopAudioClip: {fileID: 8300000, guid: fff5028f41f751540b90ec8d667a7ec9, type: 3}
+  oneShotAudioClip: {fileID: 8300000, guid: b8416292c396f454fb5974c15d3b011a, type: 3}
 --- !u!1 &2033145807 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8821623529969584324, guid: 9c702a568378fb0438096be9db615c70, type: 3}
