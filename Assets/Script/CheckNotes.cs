@@ -10,13 +10,14 @@ public class CheckNotes : MonoBehaviour
     public TextMeshProUGUI text;
     public Canvas canvas;
     private bool inRange;
-    public GameObject player;
+    private GameObject player;
     public GameObject BaseManagement;
 
     private ProgressManagement management;
 
     private void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         management = BaseManagement.GetComponent<ProgressManagement>();
     }
     
@@ -24,10 +25,9 @@ public class CheckNotes : MonoBehaviour
     {
         if (player != null)
         {
-            Vector3 playerPos = player.transform.position ;
+            Vector3 playerPos = player.transform.position + new Vector3(0, 3, 0);
             canvas.transform.LookAt(playerPos);
             canvas.transform.Rotate(0, 180, 0);
-            //Debug.Log(player.transform.rotation);
         }
         
         if (inRange )
