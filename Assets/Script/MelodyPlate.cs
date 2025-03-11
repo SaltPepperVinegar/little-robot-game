@@ -18,13 +18,17 @@ public class MelodyPlate : MonoBehaviour
     }
     public void OnTriggerEnter(Collider other)
     {
-        if (canTrigger)
+        if (other.CompareTag("Player"))
         {
-            melodyCheck.SaveNoteToList(note.note);
-            audioSource.Play();
+            if (canTrigger)
+            {
+                melodyCheck.SaveNoteToList(note.note);
+                audioSource.Play();
 
-            StartCoroutine(CooldownTimer());
+                StartCoroutine(CooldownTimer());
+            }
         }
+        
         
     }
 

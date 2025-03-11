@@ -8,18 +8,22 @@ public class DoorController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F)) 
-        {
-            isOpen = !isOpen;
-        }
 
         if (isOpen)
         {
             transform.RotateAround(hinge.position, Vector3.up, rotationSpeed * Time.deltaTime);
         }
         else
-        {
+        {   
             transform.RotateAround(hinge.position, Vector3.up, -rotationSpeed * Time.deltaTime);
+        }
+    }
+
+    void OpenDoor()
+    {
+        if (tag == "LeftDoor")
+        {
+            
         }
     }
 }
