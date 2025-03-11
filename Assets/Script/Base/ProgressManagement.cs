@@ -11,7 +11,6 @@ public class ProgressManagement : MonoBehaviour
     private Camera mainCamera;
 
     public Camera thirdPersonCamera;
-    public AudioSource Melody;
     private float BPM = 120f;
     
     private Note[] notes;
@@ -36,6 +35,7 @@ public class ProgressManagement : MonoBehaviour
         BPM = melodyChoosed.BPM;
         for(int i=0; i<notes.Length; i++){
             bases[i].GetComponent<Base>().BaseNote = notes[i];
+            bases[i].GetComponent<Base>().ChangeVoice(melodyChoosed.basesounds[i]);
         }
     }
     void Update()
