@@ -14,6 +14,7 @@ public class DoorLockInteractable : BaseInteractable
     protected override void Interact()
     {
         text.text = "Play this sound to gain access!";
+        melody.Stop();
         melody.Play();
     }
 }
