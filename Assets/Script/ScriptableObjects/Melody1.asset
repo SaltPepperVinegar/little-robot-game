@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Melody1
   m_EditorClassIdentifier: 
   correctSequence: 080000000a00000003000000
+  audioClip: {fileID: 8300000, guid: c14013394df323149b3a633068f25e97, type: 3}

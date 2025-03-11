@@ -7,6 +7,7 @@ public class DoorController : MonoBehaviour
 {
     public Transform hinge;
     public float rotationSpeed = 60f;
+<<<<<<< HEAD
     public bool isOpen = false;
         
     private float timer;
@@ -34,6 +35,20 @@ public class DoorController : MonoBehaviour
             timer += Time.deltaTime;
             yield return null;
             
+=======
+    private bool isOpen = false;
+    
+
+    public void OpenDoor()
+    {
+        if (tag == "LeftDoor")
+        {
+            transform.RotateAround(hinge.position, Vector3.up, 90);
+        }
+        else
+        {
+            transform.RotateAround(hinge.position, Vector3.up, -90);
+>>>>>>> main
         }
     }
 }
