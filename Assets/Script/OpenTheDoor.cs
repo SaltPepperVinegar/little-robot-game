@@ -17,9 +17,6 @@ public class OpenTheDoor : MonoBehaviour
 
     public void OpenDoor()
     {
-        door1.GetComponent<DoorController>().OpenTheDoor(-1);
-        door2.GetComponent<DoorController>().OpenTheDoor(1);
-
     }
 }
 
