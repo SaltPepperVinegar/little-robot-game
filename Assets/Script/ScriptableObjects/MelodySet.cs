@@ -11,4 +11,7 @@ public class MelodySet : ScriptableObject
     public float[] quartersAfterEachNote;
     public float BPM = 120f;
 
+    public AudioClip[] bellsounds;
+    public AudioClip[] basesounds;
+
 }

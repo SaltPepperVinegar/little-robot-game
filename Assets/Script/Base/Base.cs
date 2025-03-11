@@ -31,7 +31,9 @@ public class Base : MonoBehaviour
         return false;
 
     }
-
+    public void ChangeVoice(AudioClip audioClip){
+        baseAudio.clip = audioClip;
+    }
     public void PlaySound(){
         baseAudio.Stop();
         baseAudio.Play();
