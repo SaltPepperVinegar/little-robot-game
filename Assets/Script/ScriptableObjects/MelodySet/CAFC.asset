@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52aaf555d720d4642ae969b003826059, type: 3}
+  m_Name: CAFC
+  m_EditorClassIdentifier: 
+  Melody: 03000000000000000800000003000000
+  quartersAfterEachNote:
+  - 1
+  - 1.5
+  - 1.5
+  - 1
+  BPM: 120
+  bellsounds:
+  - {fileID: 8300000, guid: 1f5a38a6e5826e64d970359b99a11b7d, type: 3}
+  - {fileID: 8300000, guid: 116b9161dfaa9d04fa83a46d8ef38831, type: 3}
+  - {fileID: 8300000, guid: e22503cbd61078940abdff34f9622f9f, type: 3}
+  - {fileID: 8300000, guid: 3550768fe468a8f4ba623fe1654c87ea, type: 3}
+  basesounds:
+  - {fileID: 8300000, guid: 77e93c7434011944dae51c1593c35de1, type: 3}
+  - {fileID: 8300000, guid: 07e6d696fed5f5245859bf400720017f, type: 3}
+  - {fileID: 8300000, guid: 8952ecdc1d2dd7d468413d569bbc1ef3, type: 3}
+  - {fileID: 8300000, guid: 5b3ffed1ed7177b438b1ebacc3843365, type: 3}
