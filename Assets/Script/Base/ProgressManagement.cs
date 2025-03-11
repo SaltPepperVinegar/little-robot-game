@@ -24,6 +24,7 @@ public class ProgressManagement : MonoBehaviour
     bool matching = false;
     private bool checking = false;
     public GameObject door;
+    public bool started = false;
     void Start()
     {   
         
@@ -34,15 +35,20 @@ public class ProgressManagement : MonoBehaviour
         quartersAfterEachNote = melodyChoosed.quartersAfterEachNote;
         notes = melodyChoosed.Melody;
         BPM = melodyChoosed.BPM;
-        for(int i=0; i<notes.Length; i++){
+
+    }
+    void Update()
+    {
+        if(!started){
+            for(int i=0; i<notes.Length; i++){
             bases[i].BaseNote = notes[i];
             bases[i].ChangeVoice(melodyChoosed.basesounds[i]);
             bells[i].note = notes[i];
             bells[i].ChangeVoice(melodyChoosed.bellsounds[i]);
+            }
+            started = true;
         }
-    }
-    void Update()
-    {
+        
     }
 
     public void CheckForMelody(){
