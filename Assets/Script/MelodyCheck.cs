@@ -15,15 +15,19 @@ public class MelodyCheck : MonoBehaviour
     public void SaveNoteToList(Note note)
     {
         notesPlayed.Add(note);
+        Debug.Log(note);
+        Debug.Log(melodyData.correctSequence[0]);
+        Debug.Log(melodyData.correctSequence[1]);
+        Debug.Log(melodyData.correctSequence[2]);
         
         if (notesPlayed.Count == melodyData.correctSequence.Count)
         {
             if (notesPlayed.SequenceEqual(melodyData.correctSequence))
             {
-                
+                doorLeft.OpenDoor();
+                doorRight.OpenDoor();
                 notesPlayed.Clear();
             }
-
             
         }
         
