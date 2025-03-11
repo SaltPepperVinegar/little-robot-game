@@ -87,7 +87,6 @@ public class ProgressManagement : MonoBehaviour
     private IEnumerator Annoucement()
     {   
         AnnoucementCanvas.SetActive(true);
-        door.GetComponent<DoorOpen>().openDoor();
         yield return new WaitForSeconds(3f);
         AnnoucementCanvas.SetActive(false);
         unlocked = true;

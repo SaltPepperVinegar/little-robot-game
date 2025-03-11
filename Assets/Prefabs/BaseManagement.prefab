@@ -51,14 +51,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnnoucementCanvas: {fileID: 0}
   thirdPersonCamera: {fileID: 6516717557930999246}
-  Melody: {fileID: 0}
   melodyToChooseFrom:
   - {fileID: 11400000, guid: 2e5b20628b1c64a4eb6074278876a2fe, type: 2}
+  - {fileID: 11400000, guid: 82af26c6556a84f4e8d9215e3ed82c6c, type: 2}
+  - {fileID: 11400000, guid: 6d9cb5d8117049b4496433ea11e4d026, type: 2}
+  - {fileID: 11400000, guid: fd209daeeef384d4caadc131835b0d0b, type: 2}
+  - {fileID: 11400000, guid: 9ff6118f9fb8f0747ba9d43ce90aac12, type: 2}
   bases:
   - {fileID: 8508090976506170785}
   - {fileID: 275069547434028013}
   - {fileID: 5846075060215679038}
   - {fileID: 7115656246059383275}
+  bells:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   door: {fileID: 0}
 --- !u!1 &8643972276020282626
 GameObject:
