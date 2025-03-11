@@ -11,6 +11,7 @@ public class MelodyCheck : MonoBehaviour
     private bool DoorOpen;
     public DoorController doorLeft;
     public DoorController doorRight;
+    public DoorLockInteractable interactionObject;
     
     public void SaveNoteToList(Note note)
     {
@@ -24,8 +25,14 @@ public class MelodyCheck : MonoBehaviour
         {
             if (notesPlayed.SequenceEqual(melodyData.correctSequence))
             {
+                interactionObject.CorrectSound();
                 doorLeft.OpenDoor();
                 doorRight.OpenDoor();
+                notesPlayed.Clear();
+            }
+            else
+            {
+                interactionObject.FailSound();
                 notesPlayed.Clear();
             }
             
