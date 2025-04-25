@@ -13979,19 +13979,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3120753576179648572, guid: 560bcc0a7d2a6dc4ba2aa5cd87f3f0de, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.034835994
+      value: -0.034835998
       objectReference: {fileID: 0}
     - target: {fileID: 3120753576179648572, guid: 560bcc0a7d2a6dc4ba2aa5cd87f3f0de, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.014429548
+      value: 0.014429541
       objectReference: {fileID: 0}
     - target: {fileID: 3120753576179648572, guid: 560bcc0a7d2a6dc4ba2aa5cd87f3f0de, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.9232225
+      value: -0.92322254
       objectReference: {fileID: 0}
     - target: {fileID: 3120753576179648572, guid: 560bcc0a7d2a6dc4ba2aa5cd87f3f0de, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.38241133
+      value: -0.38241136
       objectReference: {fileID: 0}
     - target: {fileID: 4502467714303909585, guid: 560bcc0a7d2a6dc4ba2aa5cd87f3f0de, type: 3}
       propertyPath: m_TagString
@@ -15063,7 +15063,7 @@ VideoPlayer:
   m_ControlledAudioTrackCount: 1
   m_PlayOnAwake: 1
   m_SkipOnDrop: 1
-  m_Looping: 0
+  m_Looping: 1
   m_WaitForFirstFrame: 1
   m_FrameReadyEventEnabled: 0
   m_VideoShaders: []

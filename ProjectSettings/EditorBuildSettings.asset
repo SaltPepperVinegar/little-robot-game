@@ -6,10 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/3D starterscreen.unity
+    path: Assets/Scenes/StartScene.unity
     guid: 6d21351d2b83fbe44ad5a34849f5b7d7
   - enabled: 1
-    path: Assets/Scenes/Mars Landscape 3D Overview.unity
+    path: Assets/Scenes/MainScene.unity
     guid: f5183eb8abcd4294da81bd28952cf924
   - enabled: 1
     path: Assets/Scenes/Winning Screen.unity
